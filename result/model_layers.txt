@@ -1,0 +1,47 @@
+Layer type frequency in model:
+  AutoShape: 1
+  DetectMultiBackend: 1
+  DetectionModel: 1
+  Sequential: 9
+  Conv: 57
+  Conv2d: 60
+  SiLU: 57
+  C3: 8
+  Bottleneck: 11
+  SPPF: 1
+  MaxPool2d: 1
+  Upsample: 2
+  Concat: 4
+  Detect: 1
+  ModuleList: 1
+
+Layer type frequency in model.model:
+  DetectMultiBackend: 1
+  DetectionModel: 1
+  Sequential: 9
+  Conv: 57
+  Conv2d: 60
+  SiLU: 57
+  C3: 8
+  Bottleneck: 11
+  SPPF: 1
+  MaxPool2d: 1
+  Upsample: 2
+  Concat: 4
+  Detect: 1
+  ModuleList: 1
+
+Layer type frequency in model.model.model:
+  DetectionModel: 1
+  Sequential: 9
+  Conv: 57
+  Conv2d: 60
+  SiLU: 57
+  C3: 8
+  Bottleneck: 11
+  SPPF: 1
+  MaxPool2d: 1
+  Upsample: 2
+  Concat: 4
+  Detect: 1
+  ModuleList: 1

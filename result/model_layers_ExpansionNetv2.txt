@@ -1,0 +1,160 @@
+ExpansionNetv2 Architecture Analysis
+==================================================
+Load Status: local_directory
+Model Type: End_ExpansionNet_v2
+Total Parameters: 221,197,880
+Trainable Parameters: 221,197,880
+
+OVERALL LAYER TYPE FREQUENCIES:
+  Linear: 154
+  Dropout: 128
+  LayerNorm: 70
+  SwinTransformerBlock: 24
+  WindowAttention: 24
+  Softmax: 24
+  Mlp: 24
+  GELU: 24
+  DropPath: 23
+  Embedding: 14
+  ModuleList: 7
+  FeedForward: 6
+  BasicLayer: 4
+  PatchMerging: 3
+  EncoderLayer: 3
+  StaticExpansionBlock: 3
+  DecoderLayer: 3
+  MultiHeadAttention: 3
+  DynamicExpansionBlock: 3
+  End_ExpansionNet_v2: 1
+  SwinTransformer: 1
+  PatchEmbed: 1
+  Conv2d: 1
+  Identity: 1
+  LogSoftmax: 1
+  EmbeddingLayer: 1
+
+COMPONENT-SPECIFIC ANALYSIS:
+
+SWIN_TRANSF:
+  Linear: 99
+  Dropout: 73
+  LayerNorm: 53
+  SwinTransformerBlock: 24
+  WindowAttention: 24
+  Softmax: 24
+  Mlp: 24
+  GELU: 24
+  DropPath: 23
+  ModuleList: 5
+  BasicLayer: 4
+  PatchMerging: 3
+  SwinTransformer: 1
+  PatchEmbed: 1
+  Conv2d: 1
+  Identity: 1
+
+ENC_REDUCE_GROUP:
+  Linear: 1
+
+OUT_EMBEDDER:
+  EmbeddingLayer: 1
+  Dropout: 1
+  Embedding: 1
+
+==================================================
+DETAILED LAYER STRUCTURE (Top 3 levels):
+swin_transf: SwinTransformer
+swin_transf.patch_embed: PatchEmbed
+swin_transf.patch_embed.proj: Conv2d
+swin_transf.patch_embed.norm: LayerNorm
+swin_transf.pos_drop: Dropout
+swin_transf.layers: ModuleList
+swin_transf.layers.0: BasicLayer
+swin_transf.layers.1: BasicLayer
+swin_transf.layers.2: BasicLayer
+swin_transf.layers.3: BasicLayer
+swin_transf.norm: LayerNorm
+encoders: ModuleList
+encoders.0: EncoderLayer
+encoders.0.norm_1: LayerNorm
+encoders.0.norm_2: LayerNorm
+encoders.0.dropout_1: Dropout
+encoders.0.dropout_2: Dropout
+encoders.0.stc_exp: StaticExpansionBlock
+encoders.0.ff: FeedForward
+encoders.1: EncoderLayer
+encoders.1.norm_1: LayerNorm
+encoders.1.norm_2: LayerNorm
+encoders.1.dropout_1: Dropout
+encoders.1.dropout_2: Dropout
+encoders.1.stc_exp: StaticExpansionBlock
+encoders.1.ff: FeedForward
+encoders.2: EncoderLayer
+encoders.2.norm_1: LayerNorm
+encoders.2.norm_2: LayerNorm
+encoders.2.dropout_1: Dropout
+encoders.2.dropout_2: Dropout
+encoders.2.stc_exp: StaticExpansionBlock
+encoders.2.ff: FeedForward
+decoders: ModuleList
+decoders.0: DecoderLayer
+decoders.0.norm_1: LayerNorm
+decoders.0.norm_2: LayerNorm
+decoders.0.norm_3: LayerNorm
+decoders.0.dropout_1: Dropout
+decoders.0.dropout_2: Dropout
+decoders.0.dropout_3: Dropout
+decoders.0.mha: MultiHeadAttention
+decoders.0.dyn_exp: DynamicExpansionBlock
+decoders.0.ff: FeedForward
+decoders.1: DecoderLayer
+decoders.1.norm_1: LayerNorm
+decoders.1.norm_2: LayerNorm
+decoders.1.norm_3: LayerNorm
+decoders.1.dropout_1: Dropout
+decoders.1.dropout_2: Dropout
+decoders.1.dropout_3: Dropout
+decoders.1.mha: MultiHeadAttention
+decoders.1.dyn_exp: DynamicExpansionBlock
+decoders.1.ff: FeedForward
+decoders.2: DecoderLayer
+decoders.2.norm_1: LayerNorm
+decoders.2.norm_2: LayerNorm
+decoders.2.norm_3: LayerNorm
+decoders.2.dropout_1: Dropout
+decoders.2.dropout_2: Dropout
+decoders.2.dropout_3: Dropout
+decoders.2.mha: MultiHeadAttention
+decoders.2.dyn_exp: DynamicExpansionBlock
+decoders.2.ff: FeedForward
+input_embedder_dropout: Dropout
+input_linear: Linear
+vocab_linear: Linear
+log_softmax: LogSoftmax
+out_enc_dropout: Dropout
+out_dec_dropout: Dropout
+out_embedder: EmbeddingLayer
+out_embedder.dropout: Dropout
+out_embedder.embed: Embedding
+pos_encoder: Embedding
+enc_reduce_group: Linear
+enc_reduce_norm: LayerNorm
+dec_reduce_group: Linear
+dec_reduce_norm: LayerNorm
+
+SUMMARY STATISTICS:
+Total unique layer types: 26
+Total module instances: 551
+Named modules analyzed: 78
+
+Top 10 most common layer types:
+  1. Linear: 154
+  2. Dropout: 128
+  3. LayerNorm: 70
+  4. SwinTransformerBlock: 24
+  5. WindowAttention: 24
+  6. Softmax: 24
+  7. Mlp: 24
+  8. GELU: 24
+  9. DropPath: 23
+  10. Embedding: 14
