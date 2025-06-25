@@ -54,4 +54,3 @@ with open(file_path, "w") as f:
             f.write(f"  {layer_type}: {count}\n")
 
 print(f"Layer frequencies saved to: {file_path}")
-

@@ -1,0 +1,7 @@
+{
+  "input_shape": [3, 224, 224],
+  "batch_size": 1,
+  "devices": ["cuda:0", "cuda:1"],
+  "profiling_iterations": 10,
+  "max_latency_ms": 300
+}
